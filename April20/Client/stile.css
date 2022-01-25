@@ -1,0 +1,108 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+}
+
+.Glavni{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-direction: column;
+    justify-content: space-around;
+
+
+}
+
+.Forma{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: fit-content;
+    justify-content:  space-between;
+    flex-grow: inherit;
+    flex-shrink: inherit;
+
+}
+
+.DodajDvd{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: inherit;
+    flex-shrink: inherit;
+
+}
+
+.Prikaz{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-grow: inherit;
+    flex-shrink: inherit;
+}
+.divv{
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-grow: inherit;
+    flex-shrink: inherit;
+}
+
+.dugmici{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-grow: inherit;
+    flex-shrink: inherit;
+}
+
+.divVrsta, .divPolice{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 1px solid black;
+    border-collapse: collapse;
+    justify-content: space-evenly;
+    flex-grow: inherit;
+    flex-shrink: inherit;
+}
+
+.divP{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    justify-content: flex-start;
+    height: 30px;
+    width: 350px;
+    flex-grow: inherit;
+    flex-shrink: inherit;
+}
+.divPomocni{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: inherit;
+    flex-shrink: inherit;
+
+}
+.bojaDvd{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: cadetblue;
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
