@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,46 +11,46 @@ namespace OktobarII21.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ProdavnicatController : ControllerBase
+    public class TipController : ControllerBase
     {
 
         public ProdavnicaContext Context { get; set; }
 
 
-        public ProdavnicatController(ProdavnicaContext Context)
+        public TipController(ProdavnicaContext Context)
         {
             this.Context  = Context;
         }
 
 
-        [Route("PrikaziProdavnice")]
+        [Route("PrikaziTipove")]
         [HttpGet]
 
-        public async Task<ActionResult> PrikaziProdavnice(){
+        public async Task<ActionResult> PrikaziTipove(){
 
-            return Ok(await Context.Prodavnica.Select(p => new{
+            return Ok(await Context.Tip.Select(p => new{
                 Id = p.ID,
                 Naziv = p.Naziv
             }).ToListAsync());
         }
 
-        [Route("DodajProdavnicu/{naziv}")]
+        [Route("DodajTip/{naziv}")]
         [HttpPost]
 
-        public async Task<ActionResult> DodajProdavnicu(string naziv){
+        public async Task<ActionResult> DodajTip(string naziv){
 
-            if(string.IsNullOrEmpty(naziv) || naziv.Length > 50){
+            if(string.IsNullOrEmpty(naziv) || naziv.Length > 20){
                 return BadRequest("Pogresan naziv");
             }
 
             try{
-                Prodavnica p = new Prodavnica();
+                Tip p = new Tip();
                 p.Naziv = naziv;
-                Context.Prodavnica.Add(p);
+                Context.Tip.Add(p);
 
                 await Context.SaveChangesAsync();
 
-                return Ok("Prodavnica uspesno dodata");
+                return Ok("Tip uspesno dodata");
 
             }
             catch(Exception ex){

@@ -1,0 +1,58 @@
+
+
+
+table,td, th,tr,thead,tbody{
+
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.divGlavni{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+
+.divIzaberi{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.divPrikaz{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.divKorpa{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.divPretraga, .divIzmena{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.divPom{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+select{
+    width: fit-content;
+}
