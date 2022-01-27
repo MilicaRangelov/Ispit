@@ -1,0 +1,22 @@
+.divGlavni{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.divDrzava{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.divDiv{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+  
+}
