@@ -1,4 +1,5 @@
 import { Mesto } from "./Mesto.js";
+import { Smestaj } from "./Smestaj.js";
 
 export class Stranica{
 
@@ -66,7 +67,7 @@ export class Stranica{
             rb.type = "radio";
             rb.name = "drzava";
             rb.value = d.id;
-            rb.onclick = this.rbPromenjeno();
+            rb.onclick = (ev) =>this.rbPromenjeno();
             div.appendChild(rb);
 
             let lb = document.createElement("label");
@@ -78,7 +79,7 @@ export class Stranica{
 
     crtaRezervaciju(host){
 
-        let list = ["Mesto", "Datum od" , "Datum do" , "Broj osoba"];
+        let list = ["Mesto", "DatumOd" , "DatumDo" , "Kapacitet"];
         
         list.forEach(el => {
 
@@ -98,6 +99,7 @@ export class Stranica{
             else{
                 let inp = document.createElement("input");
                 inp.type = "text";
+                inp.className = "inp" + el;
                 div.appendChild(inp);
             }
         });
@@ -144,6 +146,34 @@ export class Stranica{
         while(host.lastChild){
             host.removeChild(host.lastChild);
         }
+    }
+
+    pretrazi(){
+
+        let se = document.querySelector("select");
+        let opt = se.options[se.selectedIndex].value;
+        console.log(opt);
+
+        let iv = this.kontejner.querySelector(".divPrikaz");
+        console.log(iv);
+        this.obrisiDecu(iv);
+
+        fetch("https://localhost:5001/SmestajniObjekat/PrikaziObjekteMesta/" + opt, {
+            method:"GET"
+        })
+        .then(p=> {
+            if(p.ok){
+
+                p.json().then(smestaji =>{
+
+                    smestaji.forEach(smestaj => {
+                        let s = new Smestaj(smestaj.id, smestaj.naziv);
+                        s.crtaj(iv);
+                    });
+                })
+            }
+        })
+
     }
 
 }

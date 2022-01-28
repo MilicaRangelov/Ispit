@@ -20,3 +20,24 @@
     justify-content: space-between;
   
 }
+.divSobe{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+.divDostupno{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.divPretrazi{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
