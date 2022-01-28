@@ -300,7 +300,7 @@ export class Pocetna{
                         td = document.createElement("td");
                         let btn = document.createElement("button");
                         btn.innerHTML = "Izmeni";
-                        btn.onclick = (ev) => this.izmeniProizvod(proi,tr);
+                        btn.onclick = (ev) => this.izmeniProizvod(proi);
                         td.appendChild(btn);
                         tr.appendChild(td);
 
@@ -319,11 +319,10 @@ export class Pocetna{
         })
     }
 
-    izmeniProizvod(proizvod,host){
+    izmeniProizvod(proizvod){
 
         let p = this.kontejner.querySelector(".pIzmena");
         p.innerHTML ="Izmeni:" + proizvod.naziv;
-        p.className = "pIzmeniProizvod";
         p.value = proizvod.id;
         console.log(p.value);
 
@@ -331,7 +330,7 @@ export class Pocetna{
 
     fetchIzmeni(){
 
-        let p = this.kontejner.querySelector(".pIzmeniProizvod").value;
+        let p = this.kontejner.querySelector(".pIzmena").value;
         console.log(`p value ${p}`);
         let val = this.kontejner.querySelector(".Cena").value;
         let kol = this.kontejner.querySelector(".Kolicina").value;
@@ -355,7 +354,7 @@ export class Pocetna{
 
                 p.json().then(proizvod =>{
                     td1.innerHTML = proizvod.cena;
-                    td2.innerHTML = proizovd.kolicina;
+                    td2.innerHTML = proizvod.kolicina;
                 })
             
             }
